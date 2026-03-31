@@ -99,4 +99,38 @@ window.addEventListener('load', function() {
         observer.observe(el);
     });
 
+    if ($('#waitlist-form').length) {
+        $(function () {
+            const scriptURL =
+                'https://script.google.com/macros/s/AKfycbzwdzKMuv42RvpRxH2O062jvAoVWvrDPubEtlz_NtvO3pprXUr8ViuoWl76mzicIVkm/exec';
+            const form = document.getElementById('waitlist-form');
+        
+            form.addEventListener('submit', (e) => {
+                $('#waitlist-form').addClass('disabled');
+        
+                // Sending status
+                $('#waitlist-form').addClass('readonly');
+                $('#waitlist-form input.button').val("Sending Information");
+        
+                e.preventDefault();
+        
+                // Crear FormData para incluir archivo y otros campos
+                const formData = new FormData(form);
+        
+                fetch(scriptURL, { method: 'POST', body: formData })
+                .then((response) => {
+                    $('.success-form').addClass('visible');
+                    $('#waitlist-form').addClass('readonly');
+                    $('.wrapper-form').addClass('readonly');
+                })
+                .catch((error) => {
+                    console.error('Error!', error.message);
+                    $('.success-form').removeClass('visible');
+                    $('#waitlist-form').removeClass('readonly');
+                    $('.wrapper-form').removeClass('readonly');
+                });
+            });
+        });
+    }
+
 });
