@@ -170,15 +170,15 @@ section{
 
 nav.navbar{
     width: 100%;
-    position: sticky;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     padding: 12px 0;
     background: linear-gradient(90deg, $black 15%, #00351A 50%, $black 85%);
     backdrop-filter: blur(10px);
-    // opacity: 0;
-    // pointer-events: none;
+    opacity: 0;
+    pointer-events: none;
     transition: all .4s ease-in-out;
     z-index: 9;
     &::before{
@@ -213,9 +213,9 @@ nav.navbar{
         }
     }
     &.scrolled{
-        // position: fixed;
-        // opacity: 1;
-        // pointer-events: auto;
+        position: fixed;
+        opacity: 1;
+        pointer-events: auto;
     }
     @media(max-width: 991px){
     }
