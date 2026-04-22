@@ -43,7 +43,7 @@ h1, .h1{
 }
 
 h2, .h2{
-    font-size: 22px;
+    font-size: 24px;
     line-height: 120%;
     font-weight: 700;
     letter-spacing: .1em;
@@ -177,8 +177,6 @@ nav.navbar{
     padding: 12px 0;
     background: linear-gradient(90deg, $black 15%, #00351A 50%, $black 85%);
     backdrop-filter: blur(10px);
-    opacity: 0;
-    pointer-events: none;
     transition: all .4s ease-in-out;
     z-index: 9;
     &::before{
@@ -214,8 +212,7 @@ nav.navbar{
     }
     &.scrolled{
         position: fixed;
-        opacity: 1;
-        pointer-events: auto;
+        padding: 8px 0;
     }
     @media(max-width: 991px){
     }
@@ -248,7 +245,7 @@ nav.navbar{
     }
 }
 #hero{
-    padding: 140px 0 180px;
+    padding: 180px 0 130px;
     background-color: $black;
     .hero-video{
         position: absolute;
@@ -257,7 +254,7 @@ nav.navbar{
         width: 100%;
         height: 100%;
         object-fit: cover;
-        opacity: 70%;
+        opacity: 30%;
     }
     .inner-hero-graphic{
         text-align: center;
@@ -292,7 +289,7 @@ nav.navbar{
         }
     }
     @media(max-width: 767px){
-        padding: 80px 0 140px;
+        padding: 130px 0 80px;
         .inner-hero-graphic{
             img{
                 max-width: 100px;
@@ -369,6 +366,7 @@ nav.navbar{
         left: 50%;
         transform: translateX(-50%);
         z-index: 0;
+        opacity: 40%;
     }
     .top-area{
         position: relative;
@@ -407,7 +405,7 @@ nav.navbar{
             border-radius: 50%;
             background-color: $green;
             filter: blur(60px);
-            opacity: 40%;
+            opacity: 25%;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -671,7 +669,7 @@ nav.navbar{
 footer{
     padding: 100px 0;
     background-color: $black;
-    background-image: url(../public/images/footer-bg.jpg);
+    background-image: url(../public/images/footer-bg.webp);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -778,9 +776,11 @@ footer{
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-direction: column;
             gap: 30px;
             margin: 50px 0 0;
+            span{
+                color: $green;
+            }
             a{
                 font-size: 13px;
                 font-weight: 600;
@@ -819,46 +819,42 @@ footer{
 //  Inner Pages
 
 #hero-inner{
-    padding-top: 120px;
+    padding-top: 160px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: $black;
-    background-image: url(../public/images/fairway-hero.webp);
+    background-image: url(../public/images/footer-bg.webp);
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
-    &::after{
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #000000bd;
-        z-index: 0;
-    }
     h1, h2{
         color: $white;
-        margin-bottom: 20px;
-        letter-spacing: .1em;
+        margin-bottom: 10px;
+        letter-spacing: .02em;
     }
     p{
         color: $white;
         opacity: 60%;
     }
     @media(max-width: 575px){
-        padding-top: 80px;
+        padding-top: 130px;
         padding-bottom: 80px;
     }
 }
 
 #terms-body{
-    h3{
+    h2{
+        letter-spacing: -0.01em;
+    }
+    h2, h3{
         padding-top: 60px;
         margin-bottom: 20px;
+    }
+    h2 + h3{
+        padding-top: 10px;
     }
     a:not(.button){
         color: $dark-green;
