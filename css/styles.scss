@@ -96,7 +96,7 @@ h6,
 }
 
 strong{
-    font-weight: 600;
+    font-weight: 500;
 }
 
 p, .p{
@@ -242,6 +242,9 @@ nav.navbar{
                 letter-spacing: 0.02em;
             }
         }
+        &.scrolled{
+            padding: 10px 40px;
+        }
     }
 }
 #hero{
@@ -289,7 +292,7 @@ nav.navbar{
         }
     }
     @media(max-width: 767px){
-        padding: 130px 0 80px;
+        padding: 160px 0 70px;
         .inner-hero-graphic{
             img{
                 max-width: 100px;
@@ -554,7 +557,7 @@ nav.navbar{
         }
     }
 }
-#faqs{
+.faqs{
     background-color: #F0F0F0;
     .bottom-area{
         h2{
@@ -562,7 +565,8 @@ nav.navbar{
             margin-bottom: 15px;
         }
     }
-    #accordion{
+    #accordion,
+    #accordion-rules{
         margin: 50px 0;
         .card{
             border: 0;
@@ -617,6 +621,12 @@ nav.navbar{
             .card-body{
                 background-color: $green;
                 color: $white;
+                p{
+                    margin-bottom: 12px;
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                }
             }
         }
     }
@@ -661,6 +671,47 @@ nav.navbar{
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+#rules{
+    background-color: $white;
+    #accordion,
+    #accordion-rules{
+        margin-bottom: 0;
+        .wrapper-accordion{
+            padding: 24px;
+            margin-bottom: 30px;
+            border-radius: 24px;
+            background-color: #008d471a;
+            h2{
+                color: $green;
+                margin-bottom: 16px;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                .number{
+                    width: 28px;
+                    height: 28px;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    background-color: $green;
+                    color: $white;
+                    font-size: 60%;
+                    line-height: 0;
+                    padding-left: 2px;
+                }
+                .disclaimer{
+                    font-size: 50%;
+                    color: $black;
+                }
+            }
+            &:last-child{
+                margin-bottom: 0;
             }
         }
     }
@@ -840,7 +891,6 @@ footer{
         opacity: 60%;
     }
     @media(max-width: 575px){
-        padding-top: 130px;
         padding-bottom: 80px;
     }
 }
@@ -852,6 +902,9 @@ footer{
     h2, h3{
         padding-top: 60px;
         margin-bottom: 20px;
+        &:first-of-type{
+            padding-top: 0;
+        }
     }
     h2 + h3{
         padding-top: 10px;
@@ -889,6 +942,6 @@ footer{
         }
     }
     @media(max-width: 575px){
-        padding: 80px 0;
+        padding: 60px 0;
     }
 }
