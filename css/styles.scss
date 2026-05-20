@@ -188,6 +188,26 @@ nav.navbar{
         height: 1px;
         background: linear-gradient(90deg, $black 15%, $white 50%, $black 85%);
     }
+    .navbar-toggler{
+        padding: 0;
+        margin: 0;
+        &:focus,
+        &:focus-visible,
+        &:focus-within{
+            box-shadow: none;
+            border: 0;
+            outline: 0;
+        }
+    }
+    .container{
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 30px;
+    }
+    .navbar-collapse{
+        flex: none;
+        justify-content: center;
+    }
     .inner-navigation{
         display: flex;
         justify-content: center;
@@ -216,34 +236,43 @@ nav.navbar{
     }
     @media(max-width: 991px){
     }
+    @media(max-width: 767px){
+        .container{
+            padding: 0 20px;
+            justify-content: space-between;
+        }
+        .navbar-toggler{
+            order: 2;
+        }
+        .navbar-collapse{
+            position: absolute;
+            top: 48px;
+            left: 0;
+            background: linear-gradient(90deg, #000000 15%, #00351A 50%, #000000 85%);
+            padding: 20px;
+            width: 100%;
+            height: auto;
+        }
+        .inner-navigation{
+            flex-direction: column;
+        }
+    }
     @media(max-width: 575px){
         .inner-navigation{
             gap: 10px;
-            a:not(.button){
-                font-size: 12px;
-            }
-            .button{
-                font-size: 13px;
-                padding: 8px 14px;
-            }
+        }
+        .button{
+            font-size: 14px;
+            padding: 10px 16px;
         }
     }
     @media(max-width: 425px){
-        padding: 12px 40px;
-        .inner-navigation{
-            flex-wrap: wrap;
-            justify-content: space-between;
-            a:not(.button){
-                font-size: 14px;
-            }
-            .button{
-                text-align: center;
-                width: 100%;
-                letter-spacing: 0.02em;
-            }
+        .container{
+            gap: 15px;
         }
-        &.scrolled{
-            padding: 10px 40px;
+        .button{
+            text-align: center;
+            letter-spacing: 0.02em;
         }
     }
 }
